@@ -1,7 +1,7 @@
-import java.util.Scanner;
+        import java.util.Scanner;
 
 
-class Item {
+        class Item {
         String name;
         float price;
         int quantity;
@@ -15,10 +15,11 @@ class Item {
         }
     }
 
-public class GreceryShopping {
-
+        public class GreceryShopping {
+        
 //Method to search for the place of an item in the list of items
-    public static void Search ( Item [] item, String name ){
+
+        public static void Search ( Item [] item, String name ){
 
         System.out.println("Search the place of the item.");
 
@@ -27,11 +28,12 @@ public class GreceryShopping {
             System.out.println ("The item '" + name + "' is at index: " + i);
             System.out.println(i);
         }
-    }
+        }
     
-}
+        }
 
 //Method to calculate the average price of the items in the list of prices
+
     public static void AveragePrice (Item [] item){ 
         float sum = 0.00f;
         for (int i = 0; i < item.length;++i){
@@ -39,9 +41,10 @@ public class GreceryShopping {
         }
         float average = sum / (float)item.length;
         System.out.println("The average price of the items is: " + average);   
-}
+         }
 
 //Method to put a maximum price affordable for the user and to show the items that are under this price
+
     public static float MaxPrice ( Item [] item, Scanner input){
         System.out.println("What is the maximum price you can afford?");
         float maxPrice = input.nextFloat ();
@@ -68,9 +71,11 @@ public class GreceryShopping {
     
 
 // Main 
+
     public static void main(String s []){
 
-    //INTERFACE 
+//INTERFACE 
+
     System.out.println("");
     System.out.println("");
     System.out.println("////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
@@ -94,6 +99,7 @@ public class GreceryShopping {
     System.out.println("////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
     System.out.println("");
      System.out.println("");
+//items and start of the main code and stuff 
 
         Item [] item = new Item [15];
         item [0] = new Item ("Bread", 1.50f, 10,1);
@@ -131,7 +137,8 @@ public class GreceryShopping {
             String choice = input.nextLine();
             int index = -1; 
 
-        // Finish et donc a la fin du programme
+// Finish et donc a la fin du programme
+
             if (choice.equalsIgnoreCase ("Finish")){
                 System.out.printf("Thanks, your total bill is: %.2f coins. Bye.%n", totalBill); // Genre y a pas plus facile et propre comme façon d'arrondir les float ???
                 System.out.println ("Now Paye or Die motherfucker!! HAHAHA");
@@ -141,7 +148,8 @@ public class GreceryShopping {
                 y = false;
                 break;
             }
-        // Search Method
+// Search Method
+        
             else if (choice.equalsIgnoreCase("Search")){
                 System.out.println("What item do you want to search for?");
                 String name = input.nextLine();
@@ -153,30 +161,35 @@ public class GreceryShopping {
                 List(item);
                 continue;
             }
-        // Average Price Method
+// Average Price Method
+
             else if (choice.equalsIgnoreCase("Average")){
                 AveragePrice(item);
                 continue;
             }
 
-        // Max Price Method
+// Max Price Method
+
             else if (choice.equalsIgnoreCase("MaxPrice")){
                  maxPrice = MaxPrice(item, input);
                 continue;
             }
 
-        // Bill Method
+// Bill Method
+
             else if (choice.equalsIgnoreCase("Bill")){
                 System.out.printf("Your current bill is: %.2f coins.%n", totalBill);
             }
 
-        // Article Method
+// Article Method
+        
             else {
             for (int i = 0; i < item.length && condition == true; ++i){
                 
                 if (choice.equalsIgnoreCase(item[i].name)){
 
-    //DIALOG
+//DIALOG
+
                     if (item[i].name.equalsIgnoreCase("knife")){
                         System.out.println("Mmmh, I hope it's not for killing...");
                         System.out.println ("");
@@ -266,7 +279,8 @@ public class GreceryShopping {
             }
         }
 
-    // Exit Method
+// Exit Method
+
         System.out.println("Do you want to leave the place? Press 'Exit'");
          String word = input.nextLine();
             if (word.equalsIgnoreCase("Exit")){
@@ -278,5 +292,5 @@ public class GreceryShopping {
         
     }
 
-}
+        }
 
